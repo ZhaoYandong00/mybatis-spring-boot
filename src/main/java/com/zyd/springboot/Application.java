@@ -1,5 +1,6 @@
 package com.zyd.springboot;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -12,6 +13,7 @@ import com.zyd.springboot.mapper.CountryMapper;
  *
  */
 @SpringBootApplication
+@MapperScan(value = { "com.zyd.springboot.mapper", "com.zyd.simple.mapper" }, nameGenerator = MapperNameGenerator.class)
 public class Application implements CommandLineRunner {
 	@Autowired
 	private CountryMapper countryMapper;
